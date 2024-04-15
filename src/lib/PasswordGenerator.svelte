@@ -128,4 +128,8 @@
 		letter-spacing: 2px;
 		text-align: center;
 	}
+
+	p {
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
 </style>
