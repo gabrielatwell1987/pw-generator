@@ -5,6 +5,10 @@
 </main>
 
 <style>
+	:global(body) {
+		background: grey;
+	}
+
 	main {
 		display: grid;
 		place-items: center;

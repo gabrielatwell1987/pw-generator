@@ -78,7 +78,7 @@
 	.wrapper {
 		background-color: rgb(46, 46, 45);
 		color: white;
-		border: 3px solid #4caf50;
+		border: 3px solid rgb(117, 117, 117);
 		border-radius: 10px;
 		padding: 2rem;
 	}
@@ -107,17 +107,22 @@
 
 	button {
 		display: block;
-		background-color: #4caf50;
+		background-color: #1a4e1b;
 		color: white;
 		border: none;
 		border-radius: 5px;
 		padding: 10px 24px;
 		font-size: 1.25rem;
-		font-weight: 600;
+		font-weight: 800;
 		letter-spacing: 3px;
 		cursor: pointer;
 		margin: 1rem 0;
 		text-align: center;
+	}
+
+	button:hover {
+		background: white;
+		color: #1a4e1b;
 	}
 
 	input[type='number'] {
