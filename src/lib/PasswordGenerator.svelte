@@ -67,7 +67,7 @@
 		<em>Include Special Characters</em>
 	</label>
 
-	<button on:click={generatePassword}>Generate Password</button>
+	<button on:click={generatePassword}>Make Password</button>
 	<button on:click={savePasswordToFile}>Save Password to File</button>
 
 	<p><b>Your generated password:</b></p>
