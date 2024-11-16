@@ -76,9 +76,9 @@
 
 <style>
 	.wrapper {
-		background-color: rgb(46, 46, 45);
-		color: white;
-		border: 3px solid rgb(117, 117, 117);
+		background-color: #eeeeee;
+		color: #242424;
+		border: 3px solid #0b1215;
 		border-radius: 10px;
 		padding: 2rem;
 	}
@@ -123,6 +123,7 @@
 	button:hover {
 		background: white;
 		color: #1a4e1b;
+		border: 1px solid #1a4e1b;
 	}
 
 	input[type='number'] {
