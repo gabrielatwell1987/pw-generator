@@ -78,7 +78,7 @@
 	.wrapper {
 		background-color: #eeeeee;
 		color: #242424;
-		border: 3px solid #0b1215;
+		box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
 		border-radius: 10px;
 		padding: 2rem;
 	}
