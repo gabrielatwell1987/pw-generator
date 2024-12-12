@@ -1,10 +1,10 @@
 <script>
-	let password = '';
-	let length = 10;
-	let includeUppercase = true;
-	let includeLowercase = true;
-	let includeNumbers = true;
-	let includeSpecialChars = true;
+	let password = $state('');
+	let length = $state(10);
+	let includeUppercase = $state(true);
+	let includeLowercase = $state(true);
+	let includeNumbers = $state(true);
+	let includeSpecialChars = $state(true);
 
 	const generatePassword = () => {
 		const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -67,8 +67,8 @@
 		<em>Include Special Characters</em>
 	</label>
 
-	<button on:click={generatePassword}>Generate Password</button>
-	<button on:click={savePasswordToFile}>Save Password to File</button>
+	<button onclick={generatePassword}>Generate Password</button>
+	<button onclick={savePasswordToFile}>Save Password to File</button>
 
 	<p><b>Your generated password:</b></p>
 	<p class="center"><b>{password}</b></p>
@@ -107,7 +107,7 @@
 
 	button {
 		display: block;
-		background-color: #1a4e1b;
+		background-color: #074608;
 		color: white;
 		border: none;
 		border-radius: 5px;
@@ -123,6 +123,11 @@
 	button:hover {
 		background: white;
 		color: #1a4e1b;
+	}
+
+	button:nth-child(2) {
+		background-color: #102183;
+		color: white;
 	}
 
 	input[type='number'] {
