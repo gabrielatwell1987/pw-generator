@@ -67,8 +67,8 @@
 		<em>Include Special Characters</em>
 	</label>
 
-	<button onclick={generatePassword}>Generate Password</button>
-	<button onclick={savePasswordToFile}>Save Password to File</button>
+	<button on:click={generatePassword}>Generate Password</button>
+	<button on:click={savePasswordToFile}>Save Password to File</button>
 
 	<p><b>Your generated password:</b></p>
 	<p class="center"><b>{password}</b></p>
@@ -76,9 +76,9 @@
 
 <style>
 	.wrapper {
-		background-color: rgb(46, 46, 45);
-		color: white;
-		border: 3px solid rgb(117, 117, 117);
+		background-color: #eeeeee;
+		color: #242424;
+		box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
 		border-radius: 10px;
 		padding: 2rem;
 	}
@@ -123,6 +123,7 @@
 	button:hover {
 		background: white;
 		color: #1a4e1b;
+		border: 1px solid #1a4e1b;
 	}
 
 	button:nth-child(2) {

@@ -8,7 +8,7 @@
 
 <style>
 	:global(body) {
-		background: grey;
+		background: white;
 	}
 
 	main {
