@@ -1,10 +1,10 @@
 <script>
-	let password = $state('');
-	let length = $state(10);
-	let includeUppercase = $state(true);
-	let includeLowercase = $state(true);
-	let includeNumbers = $state(true);
-	let includeSpecialChars = $state(true);
+	let password = '';
+	let length = 10;
+	let includeUppercase = true;
+	let includeLowercase = true;
+	let includeNumbers = true;
+	let includeSpecialChars = true;
 
 	const generatePassword = () => {
 		const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -41,44 +41,43 @@
 
 <div class="wrapper">
 	<label class="number">
-		<b>Password Length</b>:
+		<h3>Password Length</h3>
+		:
 		<input type="number" bind:value={length} min="4" max="32" />
 	</label>
 
-	<br /><br />
-
 	<label>
 		<input type="checkbox" bind:checked={includeUppercase} />
-		<em>Include Uppercase Letters</em>
+		<em>Uppercase Letters</em>
 	</label>
 
 	<label>
 		<input type="checkbox" bind:checked={includeLowercase} />
-		<em>Include Lowercase Letters</em>
+		<em>Lowercase Letters</em>
 	</label>
 
 	<label>
 		<input type="checkbox" bind:checked={includeNumbers} />
-		<em>Include Numbers</em>
+		<em>Numbers</em>
 	</label>
 
 	<label>
 		<input type="checkbox" bind:checked={includeSpecialChars} />
-		<em>Include Special Characters</em>
+		<em>Special Characters</em>
 	</label>
 
-	<button on:click={generatePassword}>Generate Password</button>
-	<button on:click={savePasswordToFile}>Save Password to File</button>
+	<button onclick={generatePassword}>Generate Password</button>
+	<button class="save" onclick={savePasswordToFile}>Save Password to File</button>
 
-	<p><b>Your generated password:</b></p>
+	<h4>your password is:</h4>
 	<p class="center"><b>{password}</b></p>
 </div>
 
 <style>
 	.wrapper {
-		background-color: #eeeeee;
-		color: #242424;
-		box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.2);
+		background-color: rgb(46, 46, 45);
+		color: white;
+		border: 3px solid #666;
 		border-radius: 10px;
 		padding: 2rem;
 	}
@@ -95,40 +94,58 @@
 
 	label {
 		display: block;
+		margin-left: 1.1rem;
 		margin-bottom: 0.5rem;
 		letter-spacing: 2px;
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		font-size: 1rem;
+		display: flex;
+		align-items: center;
+	}
+
+	label:first-child {
+		margin-bottom: -0.75rem;
+		margin-left: 0;
 	}
 
 	b {
-		font-size: 1.5rem;
+		font-size: clamp(1.5rem, 1.2vw, 1.3rem);
 	}
 
 	button {
 		display: block;
-		background-color: #074608;
+		background-color: #028b04;
 		color: white;
 		border: none;
 		border-radius: 5px;
 		padding: 10px 24px;
-		font-size: 1.25rem;
+		font-size: clamp(1rem, 1.25vw, 1.15rem);
 		font-weight: 800;
-		letter-spacing: 3px;
+		letter-spacing: 1px;
 		cursor: pointer;
-		margin: 1rem 0;
 		text-align: center;
+		margin-bottom: 0.25rem;
 	}
 
 	button:hover {
 		background: white;
-		color: #1a4e1b;
-		border: 1px solid #1a4e1b;
+		color: #028b04;
 	}
 
-	button:nth-child(2) {
-		background-color: #102183;
+	button:first-child {
+		margin-top: 1rem;
+	}
+
+	.save {
+		font-size: clamp(1rem, 1.25vw, 1.15rem);
+
+		background-color: #0120d3;
 		color: white;
+	}
+
+	.save:hover {
+		background: white;
+		color: #1020d3;
 	}
 
 	input[type='number'] {
@@ -138,6 +155,27 @@
 		font-weight: 600;
 		letter-spacing: 2px;
 		text-align: center;
+	}
+
+	input[type='checkbox'] {
+		appearance: none;
+		-webkit-appearance: none;
+		margin-right: 0.5rem;
+		width: 1rem;
+		height: 1rem;
+		background-color: #ccc;
+		cursor: pointer;
+		border-radius: 5px;
+		border: 2px solid #fff;
+	}
+
+	input[type='checkbox']:checked {
+		background-color: #444;
+		border: 2px solid #fff;
+	}
+
+	h4 {
+		letter-spacing: 3px;
 	}
 
 	p {
