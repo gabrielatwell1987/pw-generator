@@ -15,9 +15,9 @@
 
 <style>
 	a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
