@@ -66,7 +66,7 @@
 		<em>Special Characters</em>
 	</label>
 
-	<button onclick={generatePassword}>Generate Password</button>
+	<button class="gen" onclick={generatePassword}>Generate Password</button>
 	<button class="save" onclick={savePasswordToFile}>Save Password to File</button>
 
 	<h4>your password is:</h4>
@@ -79,19 +79,19 @@
 		color: white;
 		border: 3px solid #666;
 		border-radius: 10px;
-		padding: 2rem;
+		padding: 1rem;
 
-		.number {
+		& .number {
 			display: flex;
 			align-items: center;
 			justify-content: space-evenly;
 		}
 
-		.center {
+		& .center {
 			text-align: center;
 		}
 
-		label {
+		& label {
 			display: block;
 			margin-left: 1.1rem;
 			margin-bottom: 0.5rem;
@@ -105,7 +105,7 @@
 				margin-bottom: -0.25rem;
 				margin-left: 0;
 
-				input {
+				& input {
 					border-radius: 10px;
 				}
 			}
@@ -115,14 +115,13 @@
 			}
 		}
 
-		b {
+		& b {
 			font-size: clamp(1rem, 1.2vw, 1.3rem);
 			font-weight: bold;
 		}
 
-		button {
+		& button {
 			display: block;
-			background-color: #028b04;
 			color: white;
 			border: none;
 			border-radius: 5px;
@@ -134,61 +133,71 @@
 			text-align: center;
 			margin-bottom: 0.5rem;
 
-			&:hover {
-				background: white;
-				color: #028b04;
+			&.gen {
+				margin-top: 1.75rem;
+				background-color: hsl(91, 91%, 14%);
+				margin-inline: auto;
+
+				&:hover {
+					background: white;
+					color: hsl(91, 91%, 14%);
+				}
 			}
 		}
 
-		.save {
+		& .save {
 			font-size: clamp(1rem, 1.25vw, 1.15rem);
-
-			background-color: #0120d3;
+			margin-inline: auto;
+			background-color: hsl(231, 100%, 20%);
 			color: white;
+
+			&:hover {
+				background: white;
+				color: hsl(231, 100%, 20%);
+			}
 		}
 
-		.save:hover {
-			background: white;
-			color: #1020d3;
-		}
-
-		input[type='number'] {
-			width: 50px;
+		& input[type='number'] {
+			width: fit-content;
 			padding: 5px;
-			font-size: 1rem;
+			font-size: clamp(1rem, 1vw, 1.3rem);
 			font-weight: 600;
 			letter-spacing: 2px;
 			text-align: center;
 		}
 
-		input[type='checkbox'] {
+		& input[type='checkbox'] {
 			appearance: none;
 			-webkit-appearance: none;
 			margin-right: 0.5rem;
-			width: 1rem;
-			height: 1rem;
-			background-color: #ccc;
+			margin-bottom: 0.5rem;
+			width: clamp(1rem, 1vw, 1.5rem);
+			height: clamp(1rem, 1vw, 1.5rem);
+			background-color: #fff;
 			cursor: pointer;
 			border-radius: 5px;
+			border: 2px solid #242424;
+		}
+
+		& input[type='checkbox']:checked {
+			background-color: #1a1a1a;
 			border: 2px solid #fff;
 		}
 
-		input[type='checkbox']:checked {
-			background-color: #028b04;
-			border: 2px solid #fff;
-		}
-
-		h4 {
-			color: #666;
+		& h4 {
+			color: #cac4c4;
 			letter-spacing: 3px;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 			font-size: clamp(0.9rem, 1vw, 1.1rem);
 			font-weight: 100;
 			text-align: center;
 			margin-bottom: -1rem;
 		}
 
-		p {
+		& p {
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			color: #cac4c4;
 		}
 	}
 </style>

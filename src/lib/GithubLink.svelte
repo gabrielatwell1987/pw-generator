@@ -15,11 +15,11 @@
 
 <style>
 	a {
-		position: absolute;
-		bottom: 1rem;
-		left: 1rem;
-		width: 50px;
-		height: 50px;
+		position: fixed;
+		top: 0.5rem;
+		left: 0.5rem;
+		width: clamp(2em, 2vw, 3em);
+		height: clamp(2em, 2vw, 3em);
 		border-radius: 50%;
 		margin-inline: auto;
 
