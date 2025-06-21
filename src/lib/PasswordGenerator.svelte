@@ -40,6 +40,10 @@
 </script>
 
 <div class="wrapper">
+	<h1>Password Generator</h1>
+
+	<hr />
+
 	<label class="number">
 		<h3>Password Length</h3>
 		:
@@ -67,19 +71,34 @@
 	</label>
 
 	<button class="gen" onclick={generatePassword}>Generate Password</button>
+
 	<button class="save" onclick={savePasswordToFile}>Save Password to File</button>
 
 	<h4>your password is:</h4>
+
 	<p class="center"><b>{password}</b></p>
 </div>
 
 <style>
 	.wrapper {
-		background-color: rgb(46, 46, 45);
+		background-color: rgb(100, 100, 100);
 		color: white;
-		border: 3px solid #666;
 		border-radius: 10px;
 		padding: 1rem;
+
+		& h1 {
+			text-align: center;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			color: #eee;
+			font-size: clamp(1.5rem, 2vw, 2rem);
+		}
+
+		& hr {
+			border: none;
+			border-top: 2px solid #ccc;
+			margin-inline: auto;
+			width: 100%;
+		}
 
 		& .number {
 			display: flex;
@@ -89,17 +108,17 @@
 
 		& .center {
 			text-align: center;
+			color: white;
 		}
-
 		& label {
-			display: block;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
 			margin-left: 1.1rem;
 			margin-bottom: 0.5rem;
 			letter-spacing: 2px;
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 			font-size: 1rem;
-			display: flex;
-			align-items: center;
 
 			&:first-child {
 				margin-bottom: -0.25rem;
@@ -122,7 +141,7 @@
 
 		& button {
 			display: block;
-			color: white;
+			color: rgb(201, 201, 201);
 			border: none;
 			border-radius: 5px;
 			padding: 10px 24px;
@@ -135,12 +154,12 @@
 
 			&.gen {
 				margin-top: 1.75rem;
-				background-color: hsl(91, 91%, 14%);
+				background-color: hsl(90, 98%, 23%);
 				margin-inline: auto;
 
 				&:hover {
-					background: white;
-					color: hsl(91, 91%, 14%);
+					background: rgb(201, 201, 201);
+					color: hsl(90, 98%, 25%);
 				}
 			}
 		}
@@ -148,12 +167,12 @@
 		& .save {
 			font-size: clamp(1rem, 1.25vw, 1.15rem);
 			margin-inline: auto;
-			background-color: hsl(231, 100%, 20%);
-			color: white;
+			background-color: hsl(231, 95%, 29%);
+			/* color: white; */
 
 			&:hover {
-				background: white;
-				color: hsl(231, 100%, 20%);
+				background: rgb(201, 201, 201);
+				color: hsl(231, 95%, 34%);
 			}
 		}
 
@@ -165,27 +184,16 @@
 			letter-spacing: 2px;
 			text-align: center;
 		}
-
 		& input[type='checkbox'] {
-			appearance: none;
-			-webkit-appearance: none;
 			margin-right: 0.5rem;
-			margin-bottom: 0.5rem;
 			width: clamp(1rem, 1vw, 1.5rem);
 			height: clamp(1rem, 1vw, 1.5rem);
-			background-color: #fff;
 			cursor: pointer;
 			border-radius: 5px;
-			border: 2px solid #242424;
-		}
-
-		& input[type='checkbox']:checked {
-			background-color: #1a1a1a;
-			border: 2px solid #fff;
 		}
 
 		& h4 {
-			color: #cac4c4;
+			color: rgb(201, 201, 201);
 			letter-spacing: 3px;
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 
