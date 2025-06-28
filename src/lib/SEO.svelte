@@ -4,7 +4,7 @@
 	/** @type {{title: string, description: string, keywords: string}} */
 	let { keywords, description, title } = $props();
 	let url = $derived($page.url.href);
-	let siteName = 'Think.Flow';
+	let siteName = 'Password Generator';
 	let baseUrl = $derived($page.url.origin);
 </script>
 
@@ -22,12 +22,12 @@
 	<meta property="og:url" content={url} />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content={siteName} />
-	<meta property="og:image" content="{baseUrl}/logos/Think.Flow.svg" />
+	<meta property="og:image" content="{baseUrl}/logos/pw-generator.svg" />
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="{baseUrl}/logos/Think.Flow.svg" />
+	<meta name="twitter:image" content="{baseUrl}/logos/pw-generator.svg" />
 
 	<script type="application/ld+json">
         {JSON.stringify({
