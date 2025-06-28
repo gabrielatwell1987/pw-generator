@@ -40,7 +40,9 @@
 </script>
 
 <div class="wrapper">
-	<h1>Password Generator</h1>
+	<img src="/logos/passcraft.svg" alt="" />
+
+	<p class="center">The easiest password generator you'll find!</p>
 
 	<hr />
 
@@ -81,21 +83,14 @@
 
 <style>
 	.wrapper {
-		background-color: rgb(100, 100, 100);
-		color: white;
+		background-color: #ffffff95;
 		border-radius: 10px;
 		padding: 1rem;
-
-		& h1 {
-			text-align: center;
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
-			color: #eee;
-			font-size: clamp(1.5rem, 2vw, 2rem);
-		}
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 		& hr {
 			border: none;
-			border-top: 2px solid #ccc;
+			border-top: 2px solid #4e4e4e;
 			margin-inline: auto;
 			width: 100%;
 		}
@@ -108,7 +103,7 @@
 
 		& .center {
 			text-align: center;
-			color: white;
+			color: #242424;
 		}
 		& label {
 			display: flex;
@@ -119,6 +114,15 @@
 			letter-spacing: 2px;
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 			font-size: 1rem;
+
+			& em {
+				color: #333333;
+				font-weight: 500;
+			}
+
+			& h3 {
+				color: #242424;
+			}
 
 			&:first-child {
 				margin-bottom: -0.25rem;
@@ -141,7 +145,7 @@
 
 		& button {
 			display: block;
-			color: rgb(201, 201, 201);
+			color: rgb(231, 231, 231);
 			border: none;
 			border-radius: 5px;
 			padding: 10px 24px;
@@ -158,8 +162,9 @@
 				margin-inline: auto;
 
 				&:hover {
-					background: rgb(201, 201, 201);
+					background: rgb(231, 231, 231);
 					color: hsl(90, 98%, 25%);
+					border: 1px solid hsl(90, 98%, 25%);
 				}
 			}
 		}
@@ -171,8 +176,9 @@
 			/* color: white; */
 
 			&:hover {
-				background: rgb(201, 201, 201);
+				background: rgb(231, 231, 231);
 				color: hsl(231, 95%, 34%);
+				border: 1px solid hsl(231, 95%, 34%);
 			}
 		}
 
@@ -193,7 +199,7 @@
 		}
 
 		& h4 {
-			color: rgb(201, 201, 201);
+			color: #242424;
 			letter-spacing: 3px;
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -205,7 +211,7 @@
 
 		& p {
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
-			color: #cac4c4;
+			color: #333333;
 		}
 	}
 </style>

@@ -5,9 +5,9 @@
 </script>
 
 <SEO
-	title="Password Generator"
+	title="PassCraft - Password Generator"
 	description="Generate strong passwords with our easy-to-use password generator."
-	keywords="password generator, strong password, secure password, random password"
+	keywords="passcraft, PassCraft, password generator"
 />
 
 <PasswordGenerator />
