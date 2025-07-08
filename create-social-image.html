@@ -143,14 +143,28 @@
 
 			<div class="instructions">
 				<h3>📸 How to create your social media image:</h3>
+
+				<h4>🎯 Method 1: Download Button (Try this first!)</h4>
+				<button class="download-btn" onclick="downloadAsImage()">📷 Download as PNG</button>
+				<p>Click the button above to automatically download the image as PNG.</p>
+
+				<h4>🎯 Method 2: Screenshot (If download doesn't work)</h4>
 				<ol>
-					<li>Right-click on the image above</li>
-					<li>Select "Save as..." or take a screenshot</li>
-					<li>Save it as <strong>social-image.png</strong> in your <code>static</code> folder</li>
-					<li>Or use browser developer tools to export as PNG at 1200x630px</li>
+					<li><strong>Press</strong> <code>Windows + Shift + S</code> (Snipping Tool)</li>
+					<li><strong>Select</strong> just the gradient image area above</li>
+					<li>
+						<strong>Save</strong> as <code>social-image.png</code> in your
+						<code>static</code> folder
+					</li>
 				</ol>
 
-				<button class="download-btn" onclick="downloadAsImage()">📷 Download as PNG</button>
+				<h4>🎯 Method 3: Browser Developer Tools</h4>
+				<ol>
+					<li><strong>Right-click</strong> on the gradient image → "Inspect Element"</li>
+					<li><strong>Find</strong> <code>&lt;div class="social-image"&gt;</code> in the code</li>
+					<li><strong>Right-click</strong> that element → "Capture node screenshot"</li>
+					<li><strong>Save</strong> as <code>social-image.png</code></li>
+				</ol>
 
 				<p>
 					<strong>Alternative:</strong> Use a tool like Canva, Figma, or Photoshop to create a
@@ -159,12 +173,39 @@
 			</div>
 		</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 		<script>
 			function downloadAsImage() {
-				// This is a simple approach - for production, you'd want to use html2canvas or similar
-				alert(
-					'To download:\n1. Right-click the image above\n2. Select "Save as..."\n3. Save as social-image.png\n\nOr use browser dev tools to export as PNG'
-				);
+				const element = document.getElementById('socialImage');
+
+				html2canvas(element, {
+					width: 1200,
+					height: 630,
+					scale: 1,
+					useCORS: true,
+					backgroundColor: null
+				})
+					.then((canvas) => {
+						// Create download link
+						const link = document.createElement('a');
+						link.download = 'social-image.png';
+						link.href = canvas.toDataURL('image/png');
+
+						// Trigger download
+						document.body.appendChild(link);
+						link.click();
+						document.body.removeChild(link);
+
+						alert(
+							'Social image downloaded as social-image.png! \n\nNow move this file to your static folder.'
+						);
+					})
+					.catch((err) => {
+						console.error('Error generating image:', err);
+						alert(
+							'Error generating image. Please use the screenshot method instead:\n\n1. Press Windows + Shift + S\n2. Select the gradient image area\n3. Save as social-image.png in your static folder'
+						);
+					});
 			}
 		</script>
 	</body>
