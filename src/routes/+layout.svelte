@@ -14,5 +14,7 @@
 		display: grid;
 		place-items: center;
 		height: 100vh;
+		padding: 1rem;
+		box-sizing: border-box;
 	}
 </style>

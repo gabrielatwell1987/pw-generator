@@ -87,6 +87,10 @@
 		border-radius: 10px;
 		padding: 1rem;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		max-width: 100vw;
+		width: 100%;
+		max-width: 500px;
+		box-sizing: border-box;
 
 		& hr {
 			border: none;
@@ -141,6 +145,8 @@
 		& b {
 			font-size: clamp(1rem, 1.2vw, 1.3rem);
 			font-weight: bold;
+			word-break: break-all;
+			overflow-wrap: anywhere;
 		}
 
 		& button {
@@ -212,6 +218,27 @@
 		& p {
 			font-family: Verdana, Geneva, Tahoma, sans-serif;
 			color: #333333;
+		}
+
+		& img {
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+			display: block;
+			margin: 0 auto 1rem auto;
+		}
+	}
+
+	/* Mobile responsive styles */
+	@media (max-width: 768px) {
+		.wrapper {
+			margin: 0 0.5rem;
+			padding: 0.75rem;
+			max-width: calc(100vw - 1rem);
+
+			& img {
+				max-width: 250px;
+			}
 		}
 	}
 </style>
