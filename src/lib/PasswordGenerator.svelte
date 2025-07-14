@@ -87,7 +87,6 @@
 		border-radius: 10px;
 		padding: 1rem;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		max-width: 100vw;
 		width: 100%;
 		max-width: 500px;
 		box-sizing: border-box;
@@ -147,6 +146,9 @@
 			font-weight: bold;
 			word-break: break-all;
 			overflow-wrap: anywhere;
+			line-height: 1.4;
+			padding: 0.5rem;
+			display: block;
 		}
 
 		& button {
@@ -230,7 +232,7 @@
 	}
 
 	/* Mobile responsive styles */
-	@media (max-width: 768px) {
+	@media (width <= 768px) {
 		.wrapper {
 			margin: 0 0.5rem;
 			padding: 0.75rem;
@@ -238,6 +240,26 @@
 
 			& img {
 				max-width: 250px;
+			}
+
+			& b {
+				font-size: clamp(0.9rem, 4vw, 1.1rem);
+				line-height: 1.5;
+				padding: 0.75rem 0.5rem;
+				background-color: rgba(255, 255, 255, 0.8);
+				border-radius: 8px;
+				border: 1px solid #ddd;
+				margin: 0.5rem 0;
+				min-height: 2.5rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+
+			& .center {
+				margin: 0.5rem 0;
+				padding: 0 0.25rem;
 			}
 		}
 	}
