@@ -76,9 +76,10 @@
 
 	<button class="save" onclick={savePasswordToFile}>Save Password to File</button>
 
-	<h4>your password is:</h4>
-
-	<p class="center"><b>{password}</b></p>
+	<div class="generated">
+		<h4>Your password is:</h4>
+		<p class="center"><b>{password}</b></p>
+	</div>
 </div>
 
 <style>
@@ -181,7 +182,6 @@
 			font-size: clamp(1rem, 1.25vw, 1.15rem);
 			margin-inline: auto;
 			background-color: hsl(231, 95%, 29%);
-			/* color: white; */
 
 			&:hover {
 				background: rgb(231, 231, 231);
@@ -206,20 +206,26 @@
 			border-radius: 5px;
 		}
 
-		& h4 {
-			color: #242424;
-			letter-spacing: 3px;
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		& .generated {
+			border: 2px solid #242424;
+			border-radius: 10px;
 
-			font-size: clamp(0.9rem, 1vw, 1.1rem);
-			font-weight: 100;
-			text-align: center;
-			margin-bottom: -1rem;
-		}
+			& h4 {
+				color: #7c7b7b;
+				letter-spacing: 3px;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-		& p {
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
-			color: #333333;
+				font-size: clamp(0.9rem, 1vw, 1.1rem);
+				font-weight: 200;
+				text-align: center;
+				margin-bottom: -1rem;
+			}
+
+			& p {
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				font-size: clamp(1rem, 1.2vw, 1.3rem);
+				color: #111;
+			}
 		}
 
 		& img {
@@ -248,7 +254,7 @@
 				padding: 0.75rem 0.5rem;
 				background-color: rgba(255, 255, 255, 0.8);
 				border-radius: 8px;
-				border: 1px solid #ddd;
+				/* border: 1px solid #ddd; */
 				margin: 0.5rem 0;
 				min-height: 2.5rem;
 				display: flex;
